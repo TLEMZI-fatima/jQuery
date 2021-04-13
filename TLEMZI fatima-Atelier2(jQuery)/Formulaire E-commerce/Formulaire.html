@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+   
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+   <title>Formulaire d'Inscription</title>
+  </head>
+
+  
+  <body>
+  <section class="bg">
+  	<div class="container">
+  		<div class="row ">
+  			<div class="col-md-6">
+  				<div class="form-wrap">
+  					<div class="form-heading">
+  						<h1>E-Commerce Inscription</E-Commerce></h1>
+  						<p>Enter your Personal Data</p>
+  					</div>
+  					<form name="regForm" id="regForm">
+  						<div class="row">
+                            <div class="col-lg-6">
+  							    <label>First Name: </label>
+  							    <input type="text" class="form-control required" id="fname"fname="" placeholder="Enter your first name">
+                                <span class="error_form" id="fname_error_message"></span>
+  							    <p id="p1"></p>
+  						    </div>
+                             <div class="col-lg-6">
+                                <label>Last Name: </label>
+                                <input type="text" class="form-control required" id="lname"lname="" placeholder="Enter your last name">
+                                <span class="error_form" id="lname_error_message"></span>
+                                <p id="p2"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+  							    <label>Adress: </label>
+  							    <input type="text" class="form-control required" id="Adress"Adress="" placeholder="Enter your adress">
+                                <span class="error_form" id="adress_error_message"></span>
+  							    <p id="p3"></p>
+  						    </div>
+                             <div class="col-lg-6">
+                                <label>login </label>
+                                <input type="text" class="form-control required" id="login"login="" placeholder="Enter your login">
+                                <span class="error_form" id="lname_error_message"></span>
+                                <p id="p4"></p>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+  							<label>Email: </label>
+  							<input type="email" class="form-control required" id="email"email=""  placeholder="Enter your email">
+                            <span class="error_form" id="email_error_message"></span>
+  							<p id="p5"></p>
+  						</div>
+  						
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Password: </label>
+                                <input type="password" class="form-control required" id="Password"Password="" placeholder="Enter your password">
+                                <span class="error_form" id="Password_error_message"></span>
+                                <p id="p6"></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Re-type password: </label>
+                                <input type="password" class="form-control required" id="Re_Password"Re_Password="" placeholder="Enter password again">
+                                <span class="error_form" id="Re_Password_error_message"></span>
+                                <p id="p7"></p>
+                            </div>                                                                                                                      
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+  							    <label>GSM: </label>
+  							    <input type="tel" class="form-control required" id="téléphone"téléphone="" placeholder="Enter your number phone">
+                                  <span class="error_form" id="téléphone_error_message"></span>
+  							    <p id="p8"></p>
+  						    </div>
+                            <div class="col-lg-6">
+                                <label>Country: </label>
+                                <input type="civility" class="form-control required" id="pays"pays="" placeholder="Enter your country">
+                                <span class="error_form" id="pays_error_message"></span>
+                                <p id="p9"></p>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <select class="form-control required" id="civility"civility="" >
+                            <span class="error_form" id="civility_error_message"></span>
+                            <option>Choose civility</option>
+                            <option>Mme</option>
+                            <option>Mr</option>
+                        </select>
+                         
+                        
+                        <br>
+                        <input type="submit" class="btn btn-primary btn-block" id="submit">
+  						
+  						
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+      <script type="text/javascript">
+        $(function(){
+            $("#fname_error_messeage").hide();
+            $("#lname_error_message").hide();
+            $("#Adress_error_message").hide();
+            $("#email_error_message").hide();
+            $("#login_error_message").hide();
+            $("#Password_error_message").hide();
+            $("#Re_Password_error_message").hide();
+            $("#téléphone_error_message").hide();
+            $("#pays_error_message").hide();
+            $("#civility_error_message").hide();
+            var error_fname=false;
+            var error_lname=false;
+            var error_Adress=false;
+            var error_login=false;
+            var error_email=false; 
+            var error_Password=false;
+            var error_Re_Password=false;
+            var error_téléphone=false;
+            var error_pays=false;
+           
+            $("#fname").focusout(function(){
+                check_fname();
+            });
+            $("#lname").focusout(function(){
+                check_lname();
+            });
+            $("#Adress").focusout(function(){
+                check_Adress();
+            });
+            $("#login").focusout(function(){
+                check_login();
+            });
+            $("#email").focusout(function(){
+                check_email();
+            });
+            
+            $("#Password").focusout(function(){
+                check_Password();
+            });
+            $("#Re_Password").focusout(function(){
+                check_Re_Password();
+            });
+            $("#téléphone").focusout(function(){
+                check_téléphone();
+            });
+        
+            $("#pays").focusout(function(){
+                check_pays();
+            });
+            
+            function check_fname(){
+                var pattern=/^[a-zA-Z]*$/;
+                var fname=$("#fname").val()
+                if(pattern.test(fname) && fname !=='') {
+                    $("#fname_error_message").hide();
+                    $("#fname").css("border-bottom","2px solid #34F458");
+                } else{
+                    $("#fname_error_message").html("Should contain only Characters");
+                    $("#fname_error_message").show();
+                    $("#fname_error_message").css("border-bottom","2px solid #F90A0A");
+                    error_fname = true;
+                }
+            }
+            function check_lname() {
+                var pattern=/^[a-zA-Z]*$/;
+                var lname=$("#lname").val()
+                if(pattern.test(lname) && lname !=='') {
+                    $("#lname_error_message").hide();
+                    $("#lname").css("border-bottom","2px solid #34F458");
+                } else{
+                    $("#lname_error_message").html("Should contain only Characters");
+                    $("#lname_error_message").show();
+                    $("#lname_error_message").css("border-bottom","2px solid #F90A0A");
+                    error_lname = true;
+                }
+            }
+
+            function check_Adress(){
+                var pattern=/^[a-zA-Z]*$/;
+                var Adress=$("#Adress").val()
+                if(pattern.test(Adress) && Adress !=='') {
+                    $("#Adress_error_message").hide();
+                    $("#Adress").css("border-bottom","2px solid #34F458");
+                } else{
+                    $("#Adress_error_message").html("Should contain only Characters");
+                    $("#Adress_error_message").show();
+                    $("#Adress_error_message").css("border-bottom","2px solid #F90A0A");
+                    error_Adress= true;
+                }
+            }
+            function check_login(){
+         var pattern=/^[a-zA-Z]*$/;
+         var login=$("#login").val();
+         if(pattern.test(login) && login !==''){
+             $("login_error_message").hide();
+             $("#login").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#login_error_message").html("login incorrect");
+             $("#login_error_message").show();
+             $("login").css("border-bottom","2px solid #F90A0A");
+             error_login=true;
+         }
+         }
+
+
+        function check_email(){
+         var pattern=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}?$/;
+         var email=$("#email").val();
+         if(pattern.test(email) && email !== ''){
+             $("email_error_message").hide();
+             $("#email").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#email_error_message").html("email incorrect");
+             $("#email_error_message").show();
+             $("email").css("border-bottom","2px solid #F90A0A");
+             error_email=true;
+         }
+         }
+         
+         function Password(){
+         var Password_length=$("#Password").val().length;
+         if(Password_length<8){
+             $("Password_error_message").html("Atleast 8 characters");
+             $("#Passworde_error_message").show();
+             $("#Password").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#Password_error_message").hide();
+             $("Password").css("border-bottom","2px solid #F90A0A");
+            
+             
+         }
+         }
+         function check_Re_Password(){
+            var Password=$("#Password").val();
+            var Re_Password=$("#Re_Password").val();
+
+         if(Password !== Re_Password){
+             $("Re_Password_error_message").html("Password incorrect");
+             $("#Re_Password_error_message").show();
+             $("#Re_Password").css("border-bottom","2px solid #F90A0A");
+             error_Re_Password=true;
+            }else{
+             $("#Re_Password_error_message").hide();
+             $("#Re_Password").css("border-bottom","2px solid #34F458");
+             
+         }
+         }
+         function check_téléphone(){
+         var pattern=/^[0-9]*$/;
+         var téléphone=$("#téléphone").val();
+
+        if(pattern.test(téléphone) && téléphone !== ''){
+             $("téléphone_error_message").hide();
+             $("#téléphone").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#téléphone_error_message").html("your number phone is incorrect");
+             $("#téléphone_error_message").show();
+             $("téléphone").css("border-bottom","2px solid #F90A0A");
+             error_téléphone=true;
+         }
+         }
+         function check_pays(){
+         var pattern=/^[a-zA-Z]*$/;
+         var pays=$("#pays").val();
+         if(pattern.test(pays) && pays !== ''){
+             $("pays_error_message").hide();
+             $("#pays").css("border-bottom","2px solid #34F458");
+         }else{
+             $("#pays_error_message").html("incorrect");
+             $("#pays_error_message").show();
+             $("pays").css("border-bottom","2px solid #F90A0A");
+             error_pays=true;
+         }
+         }
+        $("#regForm").submit(function(){
+            error_fname=false;
+            error_lname=false;
+            error_Adress=false;
+            error_login=false;
+            error_email=false;
+            error_Password=false;
+            error_Re_Password=false;
+            error_téléphone=false;
+            error_pays=false;
+            error_civility=false;
+            check_fname();
+            check_lname();
+            check_Adress();
+            check_login();
+            check_email();
+            check_Password();
+            check_Re_Password();
+            check_téléphone();
+            check_pays();
+            check_civility();
+            
+            if(error_fname===false && error_lname===false && error_email===false && error_login===false && error_Password===false && error_Re_Password===false && error_téléphone===false && error_pays===false && error_civility===false && error_Adress===false){
+                 alert("Registration Successfull");
+                 return true;
+             }else{
+                 alert("please fill the form correctly");
+                 return false;
+             
+             }
+         });
+    }); 
+    </script>
+  </section>
+
+	
+	
+
+    
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("#submit").click(function(){
+            var fname = $("#fname").val();
+            var lname = $("#lname").val();
+            var Adress = $("#Adress").val();
+            var login = $("#login").val();
+            var email = $("#email").val();
+            var Password= $("#Password").val();
+            var Re_Password= $("#Re_Password").val();
+            var téléphone = $("#téléphone").val();
+            var pays = $("#pays").val();
+            var civility = $("#civility").val();
+          
+       
+          
+
+            if(fname.length == "")
+            {
+                $("#p1").text("Please enter your first name");
+                $("#fname").focus();
+                return false;
+            }
+          else if(lname.length == "")
+            {
+                $("#p2").text("Please enter your last name");
+                $("#lname").focus();
+                return false;
+            }
+            else if(Adress.length == "")
+            {
+                $("#p3").text("Please enter your Adress");
+                $("#Adress").focus();
+                return false;
+            }
+
+            else if(login.length == ""){
+                $("#p4").text("Please enter your login");
+                $("#login").focus();
+                return false;
+            }
+
+            else if(email.length == ""){
+                $("#p5").text("Please enter your email");
+                $("#email").focus();
+                return false;
+            }
+
+         
+            if(Password.length == ""){
+                $("#p6").text("Please enter your password");
+                $("#Password").focus();
+                return false;
+            }
+          
+          if(Re_Password.length == ""){
+                $("#p7").text("Please enter your password again");
+                $("#Re_Password").focus();
+                return false;
+            }
+          
+
+          
+
+          if(téléphone.length == ""){
+                $("#p8").text("Please enter your number phone");
+                $("#téléphone").focus();
+                return false;
+            }
+          if(pays.length == ""){
+                $("#p9").text("Please enter your country");
+                $("#pays").focus();
+                return false;
+            }
+          
+
+
+
+            else{
+                var con = confirm("Are you Done?");
+                if(con == true)
+                {
+                    alert("Welcome to our Website");
+                    return true;
+                }
+                else{
+                    return false;
+                }
+          }
+
+        
+
+
+         
+        
+          
+      });
+
+  });
+
+
+</script>
+  
+  
+  
+  
+  
+  </body>
+</html>
